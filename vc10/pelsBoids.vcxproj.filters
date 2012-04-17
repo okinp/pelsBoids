@@ -24,7 +24,7 @@
     <ClCompile Include="..\src\Flock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlockController.cpp">
+    <ClCompile Include="..\src\FlockController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlockController.h">
+    <ClInclude Include="..\include\FlockController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

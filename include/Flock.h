@@ -20,6 +20,7 @@ public:
     virtual void update();
     virtual void draw();
     void addBoid( Boid b );
+
 private:
     virtual void initialize();
     std::list<Boid> m_BoidList;
