@@ -52,6 +52,7 @@ void Flock::addBoid( Boid b )
 {
     m_BoidList.push_back( b );
 }
+
 void Flock::initialize()
 {
 //    addBoid( Boid( ci::Vec2f(0, 0) ));
