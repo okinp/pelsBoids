@@ -47,7 +47,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\..\..\Frameworks\Cinder\include;..\..\..\..\Frameworks\Cinder\boost</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include; $(CINDER_DIR)\include;$(BOOST_ROOT)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -58,11 +58,11 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\Frameworks\Cinder\include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_DIR)\include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\Frameworks\Cinder\lib;..\..\..\..\Frameworks\Cinder\lib\msw;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(CINDER_DIR)\lib;$(CINDER_DIR)\lib\msw;$(BOOST_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -104,19 +104,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Boid.cpp" />
-    <ClCompile Include="..\src\Flock.cpp" />
-    <ClCompile Include="..\src\FlockController.cpp" />
-    <ClCompile Include="..\src\pelsBoidsApp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="..\include\AllignmentBehavior.h" />
+    <ClInclude Include="..\include\Binner.h" />
     <ClInclude Include="..\include\Boid.h" />
+    <ClInclude Include="..\include\BoidBehavior.h" />
+    <ClInclude Include="..\include\Box.h" />
+    <ClInclude Include="..\include\CohesionBehavior.h" />
     <ClInclude Include="..\include\Flock.h" />
     <ClInclude Include="..\include\FlockController.h" />
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\include\SeperationBehavior.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AllignmentBehavior.cpp" />
+    <ClCompile Include="..\src\Binner.cpp" />
+    <ClCompile Include="..\src\Boid.cpp" />
+    <ClCompile Include="..\src\BoidBehavior.cpp" />
+    <ClCompile Include="..\src\Box.cpp" />
+    <ClCompile Include="..\src\CohesionBehavior.cpp" />
+    <ClCompile Include="..\src\Flock.cpp" />
+    <ClCompile Include="..\src\FlockController.cpp" />
+    <ClCompile Include="..\src\pelsBoidsApp.cpp" />
+    <ClCompile Include="..\src\SeperationBehavior.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
