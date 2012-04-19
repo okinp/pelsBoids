@@ -12,7 +12,7 @@ protected:
     Boid*   m_Boid;
     float invSqrt( float x )
     {
-        //Fast approximation of square root
+        //Fast approximation of inverse square root
         float xhalf = 0.5f * x;
         int i = *(int*)&x;
         i = 0x5f3759d5 - (i >> 1);

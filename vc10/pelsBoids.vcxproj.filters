@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Header Files\Rules">
+      <UniqueIdentifier>{3d3a89b7-e65a-49ac-b419-b85d87f84198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rules">
+      <UniqueIdentifier>{613fc3a2-d674-40ca-b6ce-b8a9d33ec21e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -33,20 +39,20 @@
     <ClInclude Include="..\include\Boid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\AbstractRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\SeparationRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\CohesionRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\AllignmentRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Includes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AbstractRule.h">
+      <Filter>Header Files\Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AllignmentRule.h">
+      <Filter>Header Files\Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\CohesionRule.h">
+      <Filter>Header Files\Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SeparationRule.h">
+      <Filter>Header Files\Rules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,16 +80,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\AbstractRule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SeparationRule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CohesionRule.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Rules</Filter>
     </ClCompile>
     <ClCompile Include="..\src\AllignmentRule.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CohesionRule.cpp">
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SeparationRule.cpp">
+      <Filter>Source Files\Rules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
