@@ -115,6 +115,7 @@
     <ClInclude Include="..\include\Includes.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\include\SeparationRule.h" />
+    <ClInclude Include="ContainmentRule.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
@@ -130,6 +131,7 @@
     <ClCompile Include="..\src\FlockController.cpp" />
     <ClCompile Include="..\src\pelsBoidsApp.cpp" />
     <ClCompile Include="..\src\SeparationRule.cpp" />
+    <ClCompile Include="ContainmentRule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

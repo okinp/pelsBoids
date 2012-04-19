@@ -54,6 +54,9 @@
     <ClInclude Include="..\include\SeparationRule.h">
       <Filter>Header Files\Rules</Filter>
     </ClInclude>
+    <ClInclude Include="ContainmentRule.h">
+      <Filter>Header Files\Rules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -89,6 +92,9 @@
       <Filter>Source Files\Rules</Filter>
     </ClCompile>
     <ClCompile Include="..\src\SeparationRule.cpp">
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="ContainmentRule.cpp">
       <Filter>Source Files\Rules</Filter>
     </ClCompile>
   </ItemGroup>

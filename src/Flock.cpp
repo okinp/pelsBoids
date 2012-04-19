@@ -12,7 +12,7 @@
 #include "cinder/Rand.h"
 
 Flock::Flock()
-:m_NumBoids( 1500 )
+:m_NumBoids( 1000 )
 {
     initialize();
 }
