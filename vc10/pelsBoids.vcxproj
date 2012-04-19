@@ -104,31 +104,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\AllignmentBehavior.h" />
+    <ClInclude Include="..\include\AbstractRule.h" />
+    <ClInclude Include="..\include\AllignmentRule.h" />
     <ClInclude Include="..\include\Binner.h" />
     <ClInclude Include="..\include\Boid.h" />
-    <ClInclude Include="..\include\BoidBehavior.h" />
     <ClInclude Include="..\include\Box.h" />
-    <ClInclude Include="..\include\CohesionBehavior.h" />
+    <ClInclude Include="..\include\CohesionRule.h" />
     <ClInclude Include="..\include\Flock.h" />
     <ClInclude Include="..\include\FlockController.h" />
+    <ClInclude Include="..\include\Includes.h" />
     <ClInclude Include="..\include\Resources.h" />
-    <ClInclude Include="..\include\SeperationBehavior.h" />
+    <ClInclude Include="..\include\SeparationRule.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\AllignmentBehavior.cpp" />
+    <ClCompile Include="..\src\AbstractRule.cpp" />
+    <ClCompile Include="..\src\AllignmentRule.cpp" />
     <ClCompile Include="..\src\Binner.cpp" />
     <ClCompile Include="..\src\Boid.cpp" />
-    <ClCompile Include="..\src\BoidBehavior.cpp" />
     <ClCompile Include="..\src\Box.cpp" />
-    <ClCompile Include="..\src\CohesionBehavior.cpp" />
+    <ClCompile Include="..\src\CohesionRule.cpp" />
     <ClCompile Include="..\src\Flock.cpp" />
     <ClCompile Include="..\src\FlockController.cpp" />
     <ClCompile Include="..\src\pelsBoidsApp.cpp" />
-    <ClCompile Include="..\src\SeperationBehavior.cpp" />
+    <ClCompile Include="..\src\SeparationRule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

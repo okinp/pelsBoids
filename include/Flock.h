@@ -11,6 +11,7 @@
 #include <list>
 #include "cinder/Vector.h"
 #include "Boid.h"
+#include "Binner.h"
 
 class Flock {
 public:  
@@ -23,7 +24,8 @@ public:
 
 private:
     virtual void initialize();
-    std::list<Boid> m_BoidList;
+    Binner *m_Binner;
+    std::list<Boid>* m_BoidList;
     int m_NumBoids;
 };
 #endif

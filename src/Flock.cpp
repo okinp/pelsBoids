@@ -12,7 +12,7 @@
 #include "cinder/Rand.h"
 
 Flock::Flock()
-:m_NumBoids( 2000 )
+:m_NumBoids( 1500 )
 {
     initialize();
 }
@@ -29,32 +29,34 @@ Flock::~Flock()
 
 void Flock::update()
 {
-    std::list<Boid>::iterator boidIter = m_BoidList.begin();
+    std::list<Boid>::iterator boidIter = m_BoidList->begin();
     
-    for ( ; boidIter != m_BoidList.end(); ++boidIter )
+    for ( ; boidIter != m_BoidList->end(); ++boidIter )
     {
-        boidIter->flock( m_BoidList );
-        boidIter->update();
+        (boidIter)->flock( m_BoidList );
+        (boidIter)->update();
     }
 }
 
 void Flock::draw()
 {
-    std::list<Boid>::iterator boidIter = m_BoidList.begin();
+    std::list<Boid>::iterator boidIter = m_BoidList->begin();
     
-    for ( ; boidIter != m_BoidList.end(); ++boidIter )
+    for ( ; boidIter != m_BoidList->end(); ++boidIter )
     {
-        boidIter->draw();
+        (boidIter)->draw();
     }
 }
 
 void Flock::addBoid( Boid b )
 {
-    m_BoidList.push_back( b );
+    m_BoidList->push_back( b );
 }
 
 void Flock::initialize()
 {
+    m_Binner = Binner::getInstance();
+    m_BoidList = m_Binner->getBoidList();
 //    addBoid( Boid( ci::Vec3f(0, 0) ));
 //    addBoid( Boid( ci::Vec3f(10, 0) ));
 //    addBoid( Boid( ci::Vec3f(30, 0) ));

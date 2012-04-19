@@ -20,9 +20,9 @@
 #ifndef DESIRED_ALI_SQ
 #define DESIRED_ALI_SQ 50
 #endif
-#ifndef USE_FAST_INV_SQRT
-#define USE_FAST_INV_SQRT
-#endif
+//#ifndef USE_FAST_INV_SQRT
+//#define USE_FAST_INV_SQRT
+//#endif
 #ifndef MAX_SPEED
 #define MAX_SPEED 7
 #endif
@@ -32,32 +32,26 @@
 #include <iostream>
 #include <list>
 #include <utility>
-#include "boost/scoped_ptr.hpp"
+#include "boost/shared_ptr.hpp"
 #include "cinder/Vector.h"
-#include "CohesionBehavior.h"
+#include "AbstractRule.h"
 using namespace std;
 
-typedef pair< boost::shared_ptr< CohesionBehavior >,  float > BoidRule;
+typedef boost::shared_ptr<AbstractRule> AbstractRuleRef;
+typedef pair< AbstractRuleRef, float> RulePair;
+
 class Boid {
 public:
     Boid();
     Boid( ci::Vec3f position );
     virtual ~Boid();
-    virtual void flock( std::list<Boid>& boidList );
+    virtual void flock( std::list<Boid>* boidList );
     virtual void update();
     virtual void draw();   
-protected:
+//protected:
     ci::Vec3f m_pos;
     ci::Vec3f m_vel;
     ci::Vec3f m_acc;
     virtual void initRules();
-
-
-    virtual ci::Vec3f getSeparation( std::list<Boid>& boidList );
-    virtual ci::Vec3f getCohesion( std::list<Boid>& boidList );
-    virtual ci::Vec3f getAlignment( std::list<Boid>& boidList );
-    virtual ci::Vec3f seek(ci::Vec3f target );
-    float invSqrt( float x );
-
-    std::list<BoidRule> m_Rules;
+    std::list<RulePair> m_Rules;
 };

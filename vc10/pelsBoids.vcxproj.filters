@@ -33,16 +33,19 @@
     <ClInclude Include="..\include\Boid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\AllignmentBehavior.h">
+    <ClInclude Include="..\include\AbstractRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\BoidBehavior.h">
+    <ClInclude Include="..\include\SeparationRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\CohesionBehavior.h">
+    <ClInclude Include="..\include\CohesionRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\SeperationBehavior.h">
+    <ClInclude Include="..\include\AllignmentRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,19 +70,19 @@
     <ClCompile Include="..\src\pelsBoidsApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\AllignmentBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Boid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\BoidBehavior.cpp">
+    <ClCompile Include="..\src\AbstractRule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CohesionBehavior.cpp">
+    <ClCompile Include="..\src\SeparationRule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\SeperationBehavior.cpp">
+    <ClCompile Include="..\src\CohesionRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AllignmentRule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
