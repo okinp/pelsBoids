@@ -30,11 +30,9 @@ void pelsBoidsApp::prepareSettings( Settings *settings)
 void pelsBoidsApp::setup()
 {
      m_Font = ci::Font("Arial", 48);
-    m_FlockController.setBoundingBox(ci::Vec3f(40, 40, 0), ci::Vec3f(640, 1080, -200 ) );
+     m_FlockController.setBoundingBox(ci::Vec3f(40, 40, 0), ci::Vec3f(640, 1080, -200 ) );
 
 }
-
-
 
 void pelsBoidsApp::update()
 {
