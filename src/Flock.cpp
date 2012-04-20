@@ -55,8 +55,8 @@ void Flock::addBoid( Boid b )
 
 void Flock::initialize()
 {
-    m_Binner = Binner::getInstance();
-    m_BoidList = m_Binner->getBoidList();
+    m_AppController = AppController::getInstance();
+    m_BoidList = m_AppController->getBoidList();
 //    addBoid( Boid( ci::Vec3f(0, 0) ));
 //    addBoid( Boid( ci::Vec3f(10, 0) ));
 //    addBoid( Boid( ci::Vec3f(30, 0) ));

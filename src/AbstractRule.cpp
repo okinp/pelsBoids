@@ -1,8 +1,8 @@
 #include "AbstractRule.h"
-#include "Binner.h"
+#include "AppController.h"
 AbstractRule::AbstractRule()
 {
-    m_Binner = Binner::getInstance();
+    m_AppController = AppController::getInstance();
 }
 AbstractRule::~AbstractRule()
 {

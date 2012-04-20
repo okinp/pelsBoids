@@ -1,6 +1,6 @@
 #include "SeparationRule.h"
 #include "Includes.h"
-#include "Binner.h"
+#include "AppController.h"
 #include <list>
 
 SeparationRule::SeparationRule()
@@ -19,7 +19,7 @@ ci::Vec3f SeparationRule::getSteer( Boid* const b )
     ci::Vec3f steer = ci::Vec3f::zero();
     int count = 0;
     std::list<Boid>* boidList;
-    boidList = m_Binner->getBoidList();
+    boidList = m_AppController->getBoidList();
     std::list<Boid>::iterator boidIter = boidList->begin();
     for ( ; boidIter != boidList->end(); ++boidIter )
     {

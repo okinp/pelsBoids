@@ -1,6 +1,6 @@
 #include "CohesionRule.h"
 #include "Includes.h"
-#include "Binner.h"
+#include "AppController.h"
 #include <list>
 
 CohesionRule::CohesionRule()
@@ -19,7 +19,7 @@ ci::Vec3f CohesionRule::getSteer( Boid* const b )
     ci::Vec3f sum = ci::Vec3f::zero();
     int count = 0;
     std::list<Boid>* boidList;
-    boidList = m_Binner->getBoidList();
+    boidList = m_AppController->getBoidList();
     std::list<Boid>::iterator boidIter = boidList->begin();
     for ( ; boidIter != boidList->end(); ++boidIter )
     {

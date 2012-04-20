@@ -1,6 +1,6 @@
 #pragma once
 #include "cinder/Vector.h"
-class Binner;
+class AppController;
 class Boid;
 class AbstractRule {
 public:
@@ -8,7 +8,7 @@ public:
     virtual ~AbstractRule();
     virtual ci::Vec3f getSteer( Boid* const b ) = 0;
 protected:
-    Binner* m_Binner;
+    AppController* m_AppController;
     Boid*   m_Boid;
     float invSqrt( float x )
     {

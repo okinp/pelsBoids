@@ -106,7 +106,7 @@
   <ItemGroup>
     <ClInclude Include="..\include\AbstractRule.h" />
     <ClInclude Include="..\include\AllignmentRule.h" />
-    <ClInclude Include="..\include\Binner.h" />
+    <ClInclude Include="..\include\AppController.h" />
     <ClInclude Include="..\include\Boid.h" />
     <ClInclude Include="..\include\Box.h" />
     <ClInclude Include="..\include\CohesionRule.h" />
@@ -123,7 +123,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\AbstractRule.cpp" />
     <ClCompile Include="..\src\AllignmentRule.cpp" />
-    <ClCompile Include="..\src\Binner.cpp" />
+    <ClCompile Include="..\src\AppController.cpp" />
     <ClCompile Include="..\src\Boid.cpp" />
     <ClCompile Include="..\src\Box.cpp" />
     <ClCompile Include="..\src\CohesionRule.cpp" />
