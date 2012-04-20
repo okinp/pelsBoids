@@ -1,10 +1,11 @@
 #include "AppController.h"
-AppController* AppController::m_Instance = NULL;
+#include "Flock.h"
+AppController* AppController::m_Instance = 0;
 AppController* AppController::getInstance()
 {
-    if ( !m_Instance )
+    if ( m_Instance == 0 )
     {
-        m_Instance = new AppController();
+        m_Instance = new AppController;
     }
     return m_Instance;
 }
@@ -24,11 +25,32 @@ Box* AppController::getBox() const
 {
     return m_Box;
 }
-
-AppController::AppController(void)
-    :m_Box( new Box( ci::Vec3f::zero(), 20 ) )
+void AppController::setup()
 {
-   
+    if ( !m_Flock  )
+    {
+        m_Flock = new Flock();
+    }
+}
+
+void AppController::update()
+{
+    setup();
+    m_Flock->update();
+}
+void AppController::draw()
+{
+    m_Flock->draw();
+}
+void AppController::drawBox()
+{
+    m_Box->draw();
+}
+AppController::AppController(void)
+    :m_Box( new Box( ci::Vec3f(1920/2.,1080./2, 0.), 400 ) ),
+     m_Flock( NULL )
+{
+     
 }
 
 AppController::~AppController(void)

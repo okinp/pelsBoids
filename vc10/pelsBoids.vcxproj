@@ -112,7 +112,6 @@
     <ClInclude Include="..\include\CohesionRule.h" />
     <ClInclude Include="..\include\ContainmentRule.h" />
     <ClInclude Include="..\include\Flock.h" />
-    <ClInclude Include="..\include\FlockController.h" />
     <ClInclude Include="..\include\Includes.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\include\SeparationRule.h" />
@@ -129,7 +128,6 @@
     <ClCompile Include="..\src\CohesionRule.cpp" />
     <ClCompile Include="..\src\ContainmentRule.cpp" />
     <ClCompile Include="..\src\Flock.cpp" />
-    <ClCompile Include="..\src\FlockController.cpp" />
     <ClCompile Include="..\src\pelsBoidsApp.cpp" />
     <ClCompile Include="..\src\SeparationRule.cpp" />
   </ItemGroup>

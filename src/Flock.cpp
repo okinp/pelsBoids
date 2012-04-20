@@ -12,7 +12,7 @@
 #include "cinder/Rand.h"
 
 Flock::Flock()
-:m_NumBoids( 1000 )
+:m_NumBoids( 500 )
 {
     initialize();
 }
@@ -52,18 +52,11 @@ void Flock::addBoid( Boid b )
 {
     m_BoidList->push_back( b );
 }
-
 void Flock::initialize()
 {
-    m_AppController = AppController::getInstance();
-    m_BoidList = m_AppController->getBoidList();
-//    addBoid( Boid( ci::Vec3f(0, 0) ));
-//    addBoid( Boid( ci::Vec3f(10, 0) ));
-//    addBoid( Boid( ci::Vec3f(30, 0) ));
-//    addBoid( Boid( ci::Vec3f(0, 43) ));
+    m_BoidList = AppController::getInstance()->getBoidList();
     for ( int i =0; i < m_NumBoids; ++i ) {
-        addBoid( Boid( ci::Vec3f(1700 , 200, 40) + 50*ci::Rand::randVec3f() ));
-        //addBoid( Boid( ci::Vec3f(0, 0) ));
+        addBoid( Boid( ci::Vec3f(960 , 540, 0) + 20*ci::Rand::randVec3f() ));
     }
 }
 

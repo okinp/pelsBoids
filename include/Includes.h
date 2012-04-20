@@ -25,8 +25,8 @@
 #endif
 
 #ifndef MAX_SPEED
-#define MAX_SPEED 7
+#define MAX_SPEED 3
 #endif
 #ifndef MAX_FORCE
-#define MAX_FORCE 0.4
+#define MAX_FORCE 0.3
 #endif

@@ -1,4 +1,4 @@
-#pragma 
+#pragma once
 #include "cinder/Vector.h"
 struct CubeFace
 {
@@ -13,6 +13,7 @@ struct LineSegment
     ci::Vec3f Start;
     ci::Vec3f End;
 };
+
 enum FACE_TYPE { LEFT_FACE, RIGHT_FACE, TOP_FACE, BOTTOM_FACE, FRONT_FACE, BACK_FACE };
 class Box
 {
@@ -26,8 +27,9 @@ public:
     void setSize( float side );
     void setCenter( ci::Vec3f center );
     void calculateFaces( );
-    void drawFace( const CubeFace& face );
-    bool lineSegmentIntersecectsFace( const LineSegment& segment, FACE_TYPE face, float& depth );
+    CubeFace getFace( FACE_TYPE face ) const;
+	void drawFace( const CubeFace& face );
+    bool lineSegmentIntersectsFace( const LineSegment& segment, FACE_TYPE face, float& depth );
     void draw();
     CubeFace m_TopFace;
     CubeFace m_BottomFace;

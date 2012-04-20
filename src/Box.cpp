@@ -3,7 +3,7 @@
 
 //An axis aligned box
 Box::Box(void)
-    :m_center(ci::Vec3f::zero()), m_side( 10 )
+    :m_center(ci::Vec3f::zero()), m_side( 770 )
 {
     calculateFaces( );
 }
@@ -55,20 +55,25 @@ void Box::calculateFaces()
    //   | /  | /
    //   8----7
 
-   ci::Vec3f c1(-1,-1,-1);
-   ci::Vec3f c2( 1,-1,-1);
-   ci::Vec3f c3( 1,-1, 1);
-   ci::Vec3f c4(-1,-1, 1);
-   ci::Vec3f c5(-1, 1,-1);
-   ci::Vec3f c6( 1, 1,-1);
-   ci::Vec3f c7( 1, 1, 1);
-   ci::Vec3f c8(-1, 1, 1);
+    int  a  = 1920;
+    int  b =  1080;
 
-   m_TopFace.UpperLeft  = m_center + 0.5*m_side*c1; 
-   m_TopFace.UpperRight = m_center + 0.5*m_side*c2;
-   m_TopFace.LowerLeft  = m_center + 0.5*m_side*c4;
-   m_TopFace.LowerRight = m_center + 0.5*m_side*c3;
-   m_TopFace.Normal     = ci::Vec3f( 0, 1, 0);
+   // m_center = ci::Vec3f( a/2, b/2, 0 );
+   // m_side = 540;
+    ci::Vec3f c1(-1,-1,-1);
+    ci::Vec3f c2( 1,-1,-1);
+    ci::Vec3f c3( 1,-1, 1);
+    ci::Vec3f c4(-1,-1, 1);
+    ci::Vec3f c5(-1, 1,-1);
+    ci::Vec3f c6( 1, 1,-1);
+    ci::Vec3f c7( 1, 1, 1);
+    ci::Vec3f c8(-1, 1, 1);
+
+    m_TopFace.UpperLeft  = m_center + 0.5*m_side*c1; 
+    m_TopFace.UpperRight = m_center + 0.5*m_side*c2;
+    m_TopFace.LowerLeft  = m_center + 0.5*m_side*c4;
+    m_TopFace.LowerRight = m_center + 0.5*m_side*c3;
+    m_TopFace.Normal     = ci::Vec3f( 0, 1, 0);
    //
    m_BottomFace.UpperLeft  = m_center + 0.5*m_side*c8; 
    m_BottomFace.UpperRight = m_center + 0.5*m_side*c7;
@@ -112,7 +117,30 @@ void Box::draw()
     drawFace( m_FrontFace );
     drawFace( m_BackFace );
 }
-
+CubeFace Box::getFace( FACE_TYPE face ) const
+{
+    switch ( face )
+    {
+    case LEFT_FACE:
+        return m_LeftFace;
+    	break;
+    case RIGHT_FACE:
+        return m_RightFace;
+        break;
+    case TOP_FACE:
+        return m_TopFace;
+        break;
+    case BOTTOM_FACE:
+        return m_BottomFace;
+        break;
+    case FRONT_FACE:
+        return m_FrontFace;
+        break;
+    case BACK_FACE:
+        return m_BackFace;
+        break;
+    }
+}
 void Box::drawFace( const CubeFace& face )
 {
     glBegin(GL_LINES);
@@ -123,33 +151,9 @@ void Box::drawFace( const CubeFace& face )
     glEnd();
 }
 
-bool Box::lineSegmentIntersecectsFace( const LineSegment& segment, FACE_TYPE face, float& depth )
+bool Box::lineSegmentIntersectsFace( const LineSegment& segment, FACE_TYPE face, float& depth )
 {
-    CubeFace selectedFace;
-    switch ( face )
-    {
-    case LEFT_FACE:
-        selectedFace = m_LeftFace;
-    	break;
-    case RIGHT_FACE:
-        selectedFace = m_RightFace;
-        break;
-    case TOP_FACE:
-        selectedFace = m_TopFace;
-        break;
-    case BOTTOM_FACE:
-        selectedFace = m_BottomFace;
-        break;
-    case FRONT_FACE:
-        selectedFace = m_FrontFace;
-        break;
-    case BACK_FACE:
-        selectedFace = m_BackFace;
-        break;
-    default:
-        return false;
-        break;
-    }
+    CubeFace& selectedFace = getFace( face );
     float denominator = selectedFace.Normal.dot( segment.End - segment.Start );
     if ( denominator == 0)
     {
