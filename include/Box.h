@@ -4,10 +4,16 @@ struct CubeFace
 {
     ci::Vec3f UpperLeft;
     ci::Vec3f UpperRight;
-    ci::Vec3f BottomLeft;
-    ci::Vec3f BottomRight;
+    ci::Vec3f LowerLeft;
+    ci::Vec3f LowerRight;
+    ci::Vec3f Normal;
 };
-
+struct LineSegment
+{
+    ci::Vec3f Start;
+    ci::Vec3f End;
+};
+enum FACE_TYPE { LEFT_FACE, RIGHT_FACE, TOP_FACE, BOTTOM_FACE, FRONT_FACE, BACK_FACE };
 class Box
 {
 public:
@@ -19,8 +25,9 @@ public:
     void getSize();
     void setSize( float side );
     void setCenter( ci::Vec3f center );
-    void calculateFaces( ci::Vec3f center, float side );
+    void calculateFaces( );
     void drawFace( const CubeFace& face );
+    bool lineSegmentIntersecectsFace( const LineSegment& segment, FACE_TYPE face, float& depth );
     void draw();
     CubeFace m_TopFace;
     CubeFace m_BottomFace;
@@ -28,7 +35,6 @@ public:
     CubeFace m_RightFace;
     CubeFace m_FrontFace;
     CubeFace m_BackFace;
-
     float m_side;
     ci::Vec3f m_center;
 };
